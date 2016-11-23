@@ -10,30 +10,30 @@
 
 #define PROCESS_ERROR_RETURN(Condition) \
     if (!(Condition)) {                 \
-    return 0;                       \
+        return 0;                       \
     }
 
 #define PROCESS_ERROR_LOG_RETURN(Condition, LOG, ...)   \
     if (!(Condition)) {                                 \
-    printf(LOG, __VA_ARGS__);                       \
-    return 0;                                       \
+        printf(LOG, __VA_ARGS__);                       \
+        return 0;                                       \
     }
 
 #define PROCESS_ERROR_CONTINUE(Condition)   \
     if (!Condition) {                       \
-    continue;                           \
+        continue;                           \
     }
 
 #define SAFE_FREE(p)    \
     if ((p)) {          \
-    free((p));      \
-    (p) = NULL;     \
+        free((p));      \
+        (p) = NULL;     \
     }
 
 #define SAFE_CLOSE_HANDLE(h)    \
     if ((h)) {                  \
-    CloseHandle((h));       \
-    (h) = NULL;             \
+        CloseHandle((h));       \
+        (h) = NULL;             \
     }
 
 #define STATUS_INFO_LENGTH_MISMATCH 0xc0000004
